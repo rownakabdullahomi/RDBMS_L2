@@ -21,3 +21,14 @@ ALTER TABLE person2
 
 ALTER TABLE person2
     ALTER COLUMN user_age DROP NOT NULL;
+
+ALTER TABLE person2
+    ADD CONSTRAINT unique_person2_user_age UNIQUE(user_age);
+
+ALTER TABLE person2
+    DROP CONSTRAINT unique_person2_user_age;
+
+ALTER TABLE person2
+    ADD CONSTRAINT pk_person2_user_age PRIMARY KEY(user_age);
+
+
