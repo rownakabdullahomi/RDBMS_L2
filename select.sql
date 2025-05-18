@@ -32,3 +32,20 @@ INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blo
 SELECT email as "Student Email", age FROM students
 
 SELECT * FROM students ORDER BY age DESC;
+
+SELECT DISTINCT country FROM students;
+
+SELECT DISTINCT blood_group FROM students;
+
+SELECT * FROM students
+    WHERE grade = 'A' AND course = 'Physics';
+
+SELECT * FROM students
+    WHERE blood_group = 'A+';
+
+SELECT * FROM students
+    WHERE country = 'USA' OR country = 'UK';
+
+SELECT * FROM students
+    WHERE (country = 'USA' OR country = 'UK') AND age >= 21;
+
