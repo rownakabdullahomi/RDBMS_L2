@@ -62,3 +62,17 @@ SELECT upper(first_name) AS fName_in_upper, * FROM students;
 SELECT sum(age) FROM students;
 
 SELECT max(length(first_name)) FROM students;
+
+SELECT * FROM students
+    WHERE country <> 'USA';
+
+SELECT * FROM students
+    WHERE NOT country = 'UK';
+
+SELECT * FROM students
+    WHERE  email IS NOT NULL
+
+UPDATE students SET email = NULL
+    WHERE student_id = 10;
+
+SELECT COALESCE(email, 'Email not provided') as "Email", blood_group, first_name, last_name FROM students;
