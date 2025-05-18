@@ -76,3 +76,30 @@ UPDATE students SET email = NULL
     WHERE student_id = 10;
 
 SELECT COALESCE(email, 'Email not provided') as "Email", blood_group, first_name, last_name FROM students;
+
+SELECT * FROM students WHERE country IN('USA', 'UK', 'Canada');
+SELECT * FROM students WHERE country NOT IN('USA', 'UK', 'Canada');
+
+SELECT * FROM students 
+    WHERE age BETWEEN 19 and 21;
+SELECT * FROM students 
+    WHERE dob BETWEEN '2003-01-01' and '2005-01-01' ORDER BY dob;
+
+SELECT * FROM students
+    WHERE first_name LIKE '%am';
+
+SELECT * FROM students
+    WHERE first_name LIKE '__a%';
+
+SELECT * FROM students LIMIT 5;
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+SELECT * FROM students LIMIT 5 OFFSET 5 * 2;
+
+DELETE FROM students 
+    WHERE grade = 'B';
+
+UPDATE students
+    SET email = 'default@gmail.com', age = 25
+    WHERE student_id = 3;
