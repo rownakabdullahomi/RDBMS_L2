@@ -49,3 +49,16 @@ SELECT * FROM students
 SELECT * FROM students
     WHERE (country = 'USA' OR country = 'UK') AND age >= 21;
 
+SELECT concat (first_name, ' ' ,last_name) FROM students;
+
+SELECT length(first_name) FROM students;
+
+SELECT avg(age) FROM students;
+
+SELECT count(*) FROM students;
+
+SELECT upper(first_name) AS fName_in_upper, * FROM students;
+
+SELECT sum(age) FROM students;
+
+SELECT max(length(first_name)) FROM students;
