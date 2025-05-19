@@ -56,3 +56,17 @@ SELECT title, username FROM post
 
 SELECT * FROM post AS p
     JOIN "user" AS u on p.user_id = u.id; 
+
+
+INSERT INTO post (id, title, user_id) VALUES
+(5, 'Enjoying a sunny day with Akash.', NULL);
+
+
+-- left join
+SELECT * FROM post AS p
+    LEFT JOIN "user" AS u on p.user_id = u.id;
+
+
+-- right join
+SELECT * FROM post AS p
+    RIGHT JOIN "user" AS u on p.user_id = u.id;
