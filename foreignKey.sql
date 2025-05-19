@@ -62,11 +62,24 @@ INSERT INTO post (id, title, user_id) VALUES
 (5, 'Enjoying a sunny day with Akash.', NULL);
 
 
--- left join
+-- left join / left outer join
 SELECT * FROM post AS p
     LEFT JOIN "user" AS u on p.user_id = u.id;
 
 
--- right join
+-- right join / right outer join
 SELECT * FROM post AS p
     RIGHT JOIN "user" AS u on p.user_id = u.id;
+
+
+-- full join / full outer join
+SELECT * FROM post AS p
+    FULL JOIN "user" AS u on p.user_id = u.id;
+
+-- cross join
+SELECT * FROM post
+    CROSS JOIN "user";
+
+-- natural join
+SELECT * FROM post
+    NATURAL JOIN "user";
