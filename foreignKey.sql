@@ -6,8 +6,21 @@ CREATE Table "user" (
 CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
-    user_id INTEGER REFERENCES "user" (id)
+    user_id INTEGER REFERENCES "user" (id) ON DELETE CASCADE
 );
+CREATE TABLE post (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    user_id INTEGER REFERENCES "user" (id) ON DELETE SET NULL
+);
+CREATE TABLE post (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    user_id INTEGER REFERENCES "user" (id) ON DELETE SET DEFAULT DEFAULT 2
+);
+
+DROP TABLE post;
+DROP TABLE "user";
 
 ALTER Table post
     ALTER COLUMN user_id SET NOT NULL;
@@ -29,3 +42,17 @@ SELECT * FROM "user";
 SELECT * FROM post;
 
 INSERT INTO post (title, user_id) VALUES ('test', NULL);
+
+DELETE FROM "user" 
+    WHERE id = 4;
+
+
+-- inner join
+SELECT * FROM post
+    JOIN "user" on post.user_id = "user".id;
+
+SELECT title, username FROM post
+    JOIN "user" on post.user_id = "user".id;
+
+SELECT * FROM post AS p
+    JOIN "user" AS u on p.user_id = u.id; 
