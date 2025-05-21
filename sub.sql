@@ -50,4 +50,11 @@ INSERT INTO employees2 (employee_name, department_name, salary, hire_date) VALUE
 
     SELECT * FROM employees2 WHERE salary > (SELECT max(salary) FROM employees2 WHERE department_name = 'HR');
 
+
+    SELECT * FROM 
+    (SELECT department_name, sum(salary) FROM employees2 GROUP BY department_name) AS sum_dept_salary;
     
+
+     SELECT employee_name, salary, department_name FROM employees2 
+     WHERE department_name IN 
+     (SELECT department_name FROM employees2 WHERE department_name LIKE '%R%');
