@@ -58,6 +58,10 @@ SELECT b.title, p.name, p.id AS publisher FROM books b RIGHT JOIN publishers p O
 SELECT b.title, p.name, p.id AS publisher FROM books b FULL JOIN publishers p ON b.publisher_id = p.id;
 
 SELECT CURRENT_DATE;
+
+SELECT EXTRACT(YEAR FROM CURRENT_DATE) AS "Year",
+EXTRACT(MONTH FROM CURRENT_DATE) AS "Month",
+EXTRACT(DAY FROM CURRENT_DATE) AS "Day";
  
 
 
