@@ -37,6 +37,28 @@ SELECT * FROM books LIMIT 4 OFFSET 4;
 
 UPDATE books SET price = price * 1.10;
 
+SELECT author, COUNT(*) FROM books GROUP BY author;
+
+SELECT author, COUNT(*) FROM books GROUP BY author HAVING COUNT(*) > 1;
+
+ALTER TABLE books DROP CONSTRAINT books_publisher_id_fkey;
+ALTER TABLE books ADD CONSTRAINT books_publisher_id_fkey FOREIGN KEY (publisher_id) REFERENCES publishers (id)
+ON DELETE CASCADE;
+
+
+
+DELETE FROM publishers WHERE id = 3;
+
+SELECT * FROM books;
+SELECT * FROM publishers;
+
+SELECT b.title, p.name AS publisher FROM books b INNER JOIN publishers p ON b.publisher_id = p.id;
+SELECT b.title, p.name, p.id AS publisher FROM books b LEFT JOIN publishers p ON b.publisher_id = p.id;
+SELECT b.title, p.name, p.id AS publisher FROM books b RIGHT JOIN publishers p ON b.publisher_id = p.id;
+SELECT b.title, p.name, p.id AS publisher FROM books b FULL JOIN publishers p ON b.publisher_id = p.id;
+
+SELECT CURRENT_DATE;
+ 
 
 
 
