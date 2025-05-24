@@ -17,3 +17,5 @@ INSERT INTO books (title, author_name, published_year, price, in_stock, publishe
 ('Animal Farm', 'George Orwell', 1945, 150.00, true, 4),
 ('The Great Gatsby', 'F. Scott Fitzgerald', 1925, 200.00, false, 1),
 ('Brave New World', 'Aldous Huxley', 1932, 230.00, true, NULL); -- No publisher
+
+SELECT * FROM books;
